@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-color: bisque;
+}
+
+.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    width: 400px;
+    margin: 0 auto;
+    margin-top: 100px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(173, 185, 104, 0.363);
+}
+
+.tela {
+    text-align: right;
+    background-color: rgba(240, 248, 255, 0.253);
+    padding: 5px 15px;
+    border-radius: 20px;
+    width: 100%;
+}
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    width: 100%;
+}
+
+button {
+    width: calc(25% - 5px);
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px;
+    transition: all .3s;
+}
+
+button:hover {
+    background-color: rgb(97, 99, 100);
+    transition: all .3s;
+}
