@@ -31,6 +31,7 @@ body {
 .buttons {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
     gap: 5px;
     width: 100%;
 }
@@ -47,4 +48,8 @@ button {
 button:hover {
     background-color: rgb(97, 99, 100);
     transition: all .3s;
+}
+
+button.c{
+    width: 100%;
 }
