@@ -13,7 +13,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     gap: 25px;
-    width: 400px;
+    width: 30%;
     margin: 0 auto;
     margin-top: 100px;
     padding: 20px;
@@ -52,4 +52,10 @@ button:hover {
 
 button.c{
     width: 100%;
+}
+
+@media (max-width: 768px) {
+    .wrapper {
+        width: 40%;
+    }
 }
