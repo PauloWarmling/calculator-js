@@ -1,6 +1,7 @@
 let a = null
 let b = null
 let operacao = null
+let resultado = null
 
 document.addEventListener("DOMContentLoaded", () => {
     const botoes = document.querySelectorAll('.buttons button')
@@ -16,7 +17,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     
     function handleNumber(number){
-        if(tela.textContent === "0" && number !== "."){
+        if(!isNaN(resultado) && resultado !== null){
+            tela.textContent = number
+            resultado = null
+        } else if(tela.textContent === "0" && number !== "."){
             tela.textContent = number
         } else if(isNaN(tela.textContent)) {
             tela.textContent = number
@@ -31,12 +35,12 @@ document.addEventListener("DOMContentLoaded", () => {
             a = null
             b = null
             operacao = null
+            resultado = null
         } else if(symbol === "=") {
-            debugger
             if(a !== null && operacao !== null) {
-                b = Number(tela.textContent) // pega o segundo número
+                b = Number(tela.textContent)
                 tela.textContent = handleMath(a, b, operacao)
-                a = Number(tela.textContent) // guarda resultado para continuar
+                a = Number(tela.textContent)
                 b = null
                 operacao = null
             }
@@ -44,18 +48,26 @@ document.addEventListener("DOMContentLoaded", () => {
         } else if(symbol === "."){
             handleNumber(symbol)
         } else {
-            a = Number(tela.textContent) // guarda primeiro número
-            operacao = symbol            // guarda operador
-            tela.textContent = symbol    // mostra operador na tela
+            a = Number(tela.textContent)
+            operacao = symbol
+            tela.textContent = symbol
         }
     }
 
     function handleMath(a, b, operacao) {
         switch (operacao) {
-            case "+": return a + b
-            case "-": return a - b
-            case "x": return a * b
-            case "/": return b === 0 ? "Erro" : a / b
+            case "+": 
+                resultado = a + b
+                return resultado
+            case "-":
+                resultado = a - b
+                return resultado
+            case "x":
+                resultado = a * b
+                return resultado
+            case "/": 
+                b === 0 ? resultado = "Erro" : resultado = a / b
+                return resultado
         }
     }
     
